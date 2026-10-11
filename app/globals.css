@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+  body {
+    @apply bg-cream text-ink antialiased;
+    letter-spacing: 0;
+    font-feature-settings: "lnum" 1;
+  }
+  h1, h2, h3 { letter-spacing: -0.02em; line-height: 1.05; }
+  :focus-visible { outline: 2px solid #8B5A3C; outline-offset: 3px; }
+}
+
+@layer components {
+  /* gradient headline: dark -> faded taupe, like the reference */
+  .fade-text {
+    background: linear-gradient(90deg, #2B1D14 0%, #2B1D14 38%, #A8917F 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .fade-text-light {
+    background: linear-gradient(90deg, #F5EEE4 0%, #F5EEE4 45%, #C9AE97 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  /* dotted texture, fades out toward the edges */
+  .dots {
+    background-image: radial-gradient(currentColor 1.3px, transparent 1.6px);
+    background-size: 26px 26px;
+    -webkit-mask-image: radial-gradient(ellipse at center, #000 20%, transparent 72%);
+    mask-image: radial-gradient(ellipse at center, #000 20%, transparent 72%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .animate-rise { animation: none; transform: rotate(-4deg); }
+  * { transition-duration: 0.01ms !important; }
+}
