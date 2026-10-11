@@ -23,7 +23,7 @@ export function Hero() {
           <span>4 creators, open for new projects</span>
         </div>
 
-        <h1 className="mt-8 text-[clamp(3.2rem,9vw,7.5rem)] font-medium">
+        <h1 className="mt-8 text-[clamp(3.2rem,9vw,6.5rem)] font-medium">
           <span className="fade-text block">Four Creators</span>
           <span className="fade-text flex items-center justify-center gap-3 sm:gap-5">
             Building Your
